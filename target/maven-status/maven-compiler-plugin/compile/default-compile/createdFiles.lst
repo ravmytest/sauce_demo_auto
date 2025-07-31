@@ -1,0 +1,3 @@
+com\saucedemo\sauce_demo_auto\App.class
+pages\BasePage.class
+pages\LoginPage.class
