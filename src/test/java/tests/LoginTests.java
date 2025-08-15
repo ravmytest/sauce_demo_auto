@@ -8,26 +8,26 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.LoginPage;
 
-public class LoginTests {
-    private WebDriver driver;
-    private LoginPage loginPage;
-
-    @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.get("https://sauce-demo.myshopify.com/account/login");
-        loginPage = new LoginPage(driver);
-    }
+public class LoginTests extends BaseTest{
+//    private WebDriver driver;
+//    private LoginPage loginPage;
+//
+//    @BeforeMethod
+//    public void setUp() {
+//        driver = new ChromeDriver();
+//        driver.get("https://sauce-demo.myshopify.com/account/login");
+//        loginPage = new LoginPage(driver);
+//    }
 
     @Test
-    public void testInvalidLoginShowsError() {
+    public void testInvalidLoginShowsError() throws InterruptedException {
         loginPage.login("invalid@example.com", "wrongpassword");
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Assert.assertTrue(loginPage.getErrorMessage().contains("incorrect"), "Error message not shown");
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown() {
+//        driver.quit();
+//    }
 }

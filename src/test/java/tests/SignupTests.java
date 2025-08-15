@@ -8,16 +8,16 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.SignupPage;
 
-public class SignupTests {
-    private WebDriver driver;
-    private SignupPage signupPage;
+public class SignupTests extends BaseTest{
+//    private WebDriver driver;
+//    private SignupPage signupPage;
 
-    @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.get("https://sauce-demo.myshopify.com/account/register");
-        signupPage = new SignupPage(driver);
-    }
+//    @BeforeMethod
+//    public void setUp() {
+//        driver = new ChromeDriver();
+//        driver.get("https://sauce-demo.myshopify.com/account/register");
+//        signupPage = new SignupPage(driver);
+//    }
 
     @Test
     public void testSignupWithValidData() {
@@ -35,8 +35,8 @@ public class SignupTests {
 //            || signupPage.getErrorMessage().toLowerCase().contains("exists"));
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown() {
+//        driver.quit();
+//    }
 }

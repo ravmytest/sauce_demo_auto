@@ -13,9 +13,10 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void login(String email, String password) {
+    public void login(String email, String password) throws InterruptedException {
         driver.findElement(emailField).sendKeys(email);
         driver.findElement(passwordField).sendKeys(password);
+        Thread.sleep(2000);
         driver.findElement(loginButton).click();
     }
 
